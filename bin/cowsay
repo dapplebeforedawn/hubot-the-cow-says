@@ -1,0 +1,30 @@
+#! /usr/bin/env node
+
+var cowSay, robot;
+
+cowSay = require('../cowsay.js');
+
+robot = function(chat) {
+  return {
+    respond: function(regex, robotCallback) {
+      var match, msg;
+      match = chat.match(regex);
+      msg = {
+        send: function(response) {
+          return response;
+        },
+        match: match
+      };
+      if (match) {
+        return robotCallback(msg);
+      }
+    }
+  };
+};
+
+cowSays = cowSay(robot(process.argv[2] || ''));
+
+if (!cowSays)
+  return console.log( "Needs one argument of the form:\n  'the cow says, \"mu\"'" );
+
+console.log( cowSays );
