@@ -2,7 +2,7 @@ assert = require("assert")
 cowSay = require("../cowsay.js")
 
 robot = (chat)->
-  respond: (regex, robotCallback)->
+  hear: (regex, robotCallback)->
     match = chat.match(regex)
     msg   =
       send:  (response)->

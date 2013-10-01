@@ -7,7 +7,7 @@ cowSay = require("../cowsay.js");
 
 robot = function(chat) {
   return {
-    respond: function(regex, robotCallback) {
+    hear: function(regex, robotCallback) {
       var match, msg;
       match = chat.match(regex);
       msg = {

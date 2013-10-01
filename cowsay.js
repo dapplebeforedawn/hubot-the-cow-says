@@ -7,7 +7,7 @@ module.exports = function(robot) {
     return (cow + "").trim();
   };
   speech_bubble = function(message) {};
-  return robot.respond(/the(?:(\s\w*\s)|\s)cow says, "(.*)"/i, function(msg) {
+  return robot.hear(/the(?:(\s\w*\s)|\s)cow says, "(.*)"/i, function(msg) {
     var bubble, cow_type;
     cow_type = cleanup_cow_type(msg.match[1]);
     bubble = Bubble(msg.match[2]);
