@@ -15,7 +15,7 @@ Or use the included binary:
   ```
   
 ## Running the Tests:
-requires [mocha](http://visionmedia.github.io/mocha/)
+requires [mocha](http://mochajs.org/)
   ```bash
   mocha
   ````
